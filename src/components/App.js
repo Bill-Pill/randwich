@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
+const APIKEY = 'Bearer PnG_RCfAxrBcfA44dnIwv1BALh7sMSIRC5TVEJ9JaWZBsCcUG' + 
+               'Og5DkXgLUmqmnJYK2cy0u71s9LWp1lgRJ1Y3VhMsuN5HBph6RoA2VmAjqjIIoNODSUmWLGlGmWnXXYx'
+
 class App extends React.Component {
     constructor() {
     super()
@@ -44,11 +47,14 @@ class App extends React.Component {
     navigator.geolocation.getCurrentPosition(success, error, options);
   }
 
+  // Queries Yelp API with appropriate key and
+  // returns sandwich restaurants near current
+  // location
   fetchMeASandwich = () => {
     const axiosSandwichInstance = axios.create({
     baseURL: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses',
     timeout: 10000,
-    headers: {'Authorization': 'Bearer PnG_RCfAxrBcfA44dnIwv1BALh7sMSIRC5TVEJ9JaWZBsCcUGOg5DkXgLUmqmnJYK2cy0u71s9LWp1lgRJ1Y3VhMsuN5HBph6RoA2VmAjqjIIoNODSUmWLGlGmWnXXYx'}
+    headers: {'Authorization': APIKEY}
     });
 
     axiosSandwichInstance.get('search?latitude=36&longitude=-79&radius=33333&categories=sandwiches')
