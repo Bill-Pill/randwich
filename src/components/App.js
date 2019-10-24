@@ -10,7 +10,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <button variant="warning" size="lg"  onClick={this.handleClick}>
+      <button className="btn btn-warning" size="lg"  onClick={this.handleClick}>
         Randwich
       </button>
     );
