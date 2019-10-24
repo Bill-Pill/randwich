@@ -74,7 +74,7 @@ class App extends React.Component {
 
     // Get request pre-populated with above defaults.
     // Save specified values to state if successful
-    axiosSandwichInstance.get(`search?latitude=${latTest}&longitude=${longTest}&radius=40000&categories=sandwiches`)
+    axiosSandwichInstance.get(`search?latitude=${latTest}&longitude=${longTest}&radius=8000&categories=sandwiches&limit=50`)
       .then((response) => {
         // Placeholder index value for testing
         let i = 0;
@@ -90,6 +90,7 @@ class App extends React.Component {
         // Setting state with object containing API response items
          this.setState({activeSandwichPlace: activeSandwichPlaceDetails })
          console.log('current state of activeSandwichPlace', this.state.activeSandwichPlace)
+         console.log(response);
       })
       .catch(function (error) {
         // handle error
