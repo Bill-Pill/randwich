@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import './SandwichPlace'
+import SandwichPlace from './SandwichPlace';
 
 const APIKEY = 'Bearer PnG_RCfAxrBcfA44dnIwv1BALh7sMSIRC5TVEJ9JaWZBsCcUG' + 
                'Og5DkXgLUmqmnJYK2cy0u71s9LWp1lgRJ1Y3VhMsuN5HBph6RoA2VmAjqjIIoNODSUmWLGlGmWnXXYx'
@@ -100,7 +102,6 @@ class App extends React.Component {
 
   handleClick = () => {
     this.fetchCurrentCoords()
-    // this.fetchMeASandwich()
   }
 
   render() {
@@ -108,8 +109,8 @@ class App extends React.Component {
       <div className="container">
         <div className="row img">
           <div className="col-md-6 offset-md-3">
-          <img className="mainSandwich" src="https://s3-media3.fl.yelpcdn.com/bphoto/SiRfp5l__BN1zDV8BLEV7Q/o.jpg"></img>
-        </div>
+            <SandwichPlace place={this.state.activeSandwichPlace} />
+          </div>
         </div>
         <div className="row randbtn">
           <div className="col-md-6 offset-md-3">
@@ -118,7 +119,7 @@ class App extends React.Component {
             Randwich!
            </button>
           </div>
-         </div>
+        </div>
       </div>
     );
   }
