@@ -14,6 +14,13 @@ class App extends React.Component {
       },
       currentLong: {
         longCoord: null
+      },
+      activeSandwichPlace: {
+        name: null,
+        phone: null,
+        image: null,
+        price: null,
+        address: null
       }
     }
   }
@@ -51,29 +58,40 @@ class App extends React.Component {
   // returns sandwich restaurants near current
   // location
   fetchMeASandwich = () => {
+
+    // Creates/sets axios instance with default values
     const axiosSandwichInstance = axios.create({
     baseURL: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses',
     timeout: 10000,
     headers: {'Authorization': APIKEY}
     });
 
+    // Get request pre-populated with above defaults.
+    // Save specified values to state if successful
     axiosSandwichInstance.get('search?latitude=36&longitude=-79&radius=33333&categories=sandwiches')
-      .then(function (response) {
-        console.log(response)
+      .then((response) => {
+        // Placeholder index value for testing
+        let i = 0;
+
+        // object populated with API response items
+        const activeSandwichPlaceDetails = {
+          name: response.data.businesses[i].name,
+          phone: response.data.businesses[i].display_phone,
+          image: response.data.businesses[i].image_url,
+          price: response.data.businesses[i].price,
+          address: response.data.businesses[i].location.address1
+        }
+        // Setting state with object containing API response items
+         this.setState({activeSandwichPlace: activeSandwichPlaceDetails })
+         console.log('current state of activeSandwichPlace', this.state.activeSandwichPlace)
       })
       .catch(function (error) {
         // handle error
         console.log(error);
-  })
-    
+    }) 
   }
 
-  
-
-  // This syntax ensures `this` is bound within handleClick.
-  // Warning: this is *experimental* syntax.
   handleClick = () => {
-    console.log('this is:', this);
     this.fetchCurrentCoords()
     this.fetchMeASandwich()
   }
