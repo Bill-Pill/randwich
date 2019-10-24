@@ -1,1 +1,10 @@
 Randwich README
+
+Team info
+Yelp login : JenBonitto.ps2019@gmail.com
+Yelp password: Rand2019_
+Yelp API info
+Client ID
+S7qp7zEVVrEvZqgujidDxQ
+API Key
+PnG_RCfAxrBcfA44dnIwv1BALh7sMSIRC5TVEJ9JaWZBsCcUGOg5DkXgLUmqmnJYK2cy0u71s9LWp1lgRJ1Y3VhMsuN5HBph6RoA2VmAjqjIIoNODSUmWLGlGmWnXXYx
