@@ -47,7 +47,7 @@ class App extends React.Component {
   fetchMeASandwich = () => {
     const axiosSandwichInstance = axios.create({
     baseURL: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses',
-    timeout: 1000,
+    timeout: 10000,
     headers: {'Authorization': 'Bearer PnG_RCfAxrBcfA44dnIwv1BALh7sMSIRC5TVEJ9JaWZBsCcUGOg5DkXgLUmqmnJYK2cy0u71s9LWp1lgRJ1Y3VhMsuN5HBph6RoA2VmAjqjIIoNODSUmWLGlGmWnXXYx'}
     });
 
