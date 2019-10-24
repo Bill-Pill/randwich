@@ -6,8 +6,10 @@ class App extends React.Component {
     super()
 
     this.state = {
-      currentCoords: {
+      currentLat: {
         latCoord: null,
+      },
+      currentLong: {
         longCoord: null
       }
     }
@@ -27,11 +29,11 @@ class App extends React.Component {
     // On successful fetch, saves coords to state.
     const success = (position) => {
       const crd = position.coords;
-      this.setState({currentCoords:{latCoord: crd.latitude} })
-      this.setState({currentCoords:{longCoord: crd.latitude} })
+      this.setState({currentLat:{latCoord: crd.latitude} })
+      this.setState({currentLong:{longCoord: crd.longitude} })
       // Test logs for coords
-      console.log("In state: ", "lat coord is: ", this.state.currentCoords.latCoord)
-      console.log("In state: ", "long coord is: ", this.state.currentCoords.longCoord)
+      console.log("In state: ", "lat coord is: ", this.state.currentLat.latCoord)
+      console.log("In state: ", "long coord is: ", this.state.currentLong.longCoord)
     }
 
     // If failed to fetch location, log errors in console.
