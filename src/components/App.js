@@ -70,9 +70,11 @@ class App extends React.Component {
     var longTest = this.state.currentLong.longCoord;
 
 
+
+
     // Get request pre-populated with above defaults.
     // Save specified values to state if successful
-    axiosSandwichInstance.get(`search?latitude=${latTest}&longitude=${longTest}&radius=33333&categories=sandwiches`)
+    axiosSandwichInstance.get(`search?latitude=${latTest}&longitude=${longTest}&radius=40000&categories=sandwiches`)
       .then((response) => {
         // Placeholder index value for testing
         let i = 0;
@@ -112,7 +114,7 @@ class App extends React.Component {
           <div className="col-md-6 offset-md-3">
             <br></br>
            <button className="randwich_btn btn btn-warning" size="lg" onClick={this.handleClick}>
-            Randwich
+            Randwich!
            </button>
           </div>
          </div>
