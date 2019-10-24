@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from "axios";
 
 class App extends React.Component {
     constructor() {
@@ -14,6 +14,7 @@ class App extends React.Component {
       }
     }
   }
+  
   // When invoked, grabs current latitude and longitude
   // coordinates of user and saves to state
   fetchCurrentCoords = () => {
