@@ -41,7 +41,7 @@ class App extends React.Component {
     const success = (position) => {
       const crd = position.coords;
       this.setState({currentLat:{latCoord: crd.latitude} })
-      this.setState({currentLong:{longCoord: crd.longitude} })
+      this.setState({currentLong:{longCoord: crd.longitude} }, this.fetchMeASandwich)
       // Test logs for coords
       console.log("In state: ", "lat coord is: ", this.state.currentLat.latCoord)
       console.log("In state: ", "long coord is: ", this.state.currentLong.longCoord)
@@ -66,9 +66,13 @@ class App extends React.Component {
     headers: {'Authorization': APIKEY}
     });
 
+    var latTest = this.state.currentLat.latCoord;
+    var longTest = this.state.currentLong.longCoord;
+
+
     // Get request pre-populated with above defaults.
     // Save specified values to state if successful
-    axiosSandwichInstance.get('search?latitude=36&longitude=-79&radius=33333&categories=sandwiches')
+    axiosSandwichInstance.get(`search?latitude=${latTest}&longitude=${longTest}&radius=33333&categories=sandwiches`)
       .then((response) => {
         // Placeholder index value for testing
         let i = 0;
@@ -93,7 +97,7 @@ class App extends React.Component {
 
   handleClick = () => {
     this.fetchCurrentCoords()
-    this.fetchMeASandwich()
+    // this.fetchMeASandwich()
   }
 
   render() {
