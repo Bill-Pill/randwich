@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from "axios";
+import axios from 'axios';
 
 class App extends React.Component {
     constructor() {
@@ -14,7 +14,7 @@ class App extends React.Component {
       }
     }
   }
-  
+
   // When invoked, grabs current latitude and longitude
   // coordinates of user and saves to state
   fetchCurrentCoords = () => {
@@ -44,11 +44,32 @@ class App extends React.Component {
     navigator.geolocation.getCurrentPosition(success, error, options);
   }
 
+  fetchMeASandwich = () => {
+    const axiosSandwichInstance = axios.create({
+    baseURL: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses',
+    timeout: 1000,
+    headers: {'Authorization': 'Bearer PnG_RCfAxrBcfA44dnIwv1BALh7sMSIRC5TVEJ9JaWZBsCcUGOg5DkXgLUmqmnJYK2cy0u71s9LWp1lgRJ1Y3VhMsuN5HBph6RoA2VmAjqjIIoNODSUmWLGlGmWnXXYx'}
+    });
+
+    axiosSandwichInstance.get('search?latitude=36&longitude=-79&radius=33333&categories=sandwiches')
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+  })
+    
+  }
+
+  
+
   // This syntax ensures `this` is bound within handleClick.
   // Warning: this is *experimental* syntax.
   handleClick = () => {
     console.log('this is:', this);
     this.fetchCurrentCoords()
+    this.fetchMeASandwich()
   }
 
   render() {
