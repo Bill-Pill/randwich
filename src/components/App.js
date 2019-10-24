@@ -98,9 +98,21 @@ class App extends React.Component {
 
   render() {
     return (
-      <button className="btn btn-warning" size="lg"  onClick={this.handleClick}>
-        Randwich
-      </button>
+      <div className="container">
+        <div className="row img">
+          <div className="col-md-6 offset-md-3">
+          <img className="mainSandwich" src="https://s3-media3.fl.yelpcdn.com/bphoto/SiRfp5l__BN1zDV8BLEV7Q/o.jpg"></img>
+        </div>
+        </div>
+        <div className="row randbtn">
+          <div className="col-md-6 offset-md-3">
+            <br></br>
+           <button className="randwich_btn btn btn-warning" size="lg" onClick={this.handleClick}>
+            Randwich
+           </button>
+          </div>
+         </div>
+      </div>
     );
   }
 }

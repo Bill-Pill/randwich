@@ -1,0 +1,22 @@
+.randwich_btn {
+  top: 50%;
+  left: 50%;
+  font-size: 2.0em;
+  
+
+}
+.mainSandwich {
+  border-radius: 30px;
+  width: 500px;
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.randbtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
