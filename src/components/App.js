@@ -76,8 +76,8 @@ class App extends React.Component {
     // Save specified values to state if successful
     axiosSandwichInstance.get(`search?latitude=${latTest}&longitude=${longTest}&radius=8000&categories=sandwiches&limit=50`)
       .then((response) => {
-        // Placeholder index value for testing
-        let i = 0;
+        // function to retrieve a random sandwich shop from our limit of 50 
+        let i = Math.floor(Math.random() * 50) + 1;
 
         // object populated with API response items
         const activeSandwichPlaceDetails = {
