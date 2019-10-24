@@ -24,13 +24,14 @@ class App extends React.Component {
       maximumAge: 0
     };
 
-    // On successful fetch, saves coords.
+    // On successful fetch, saves coords to state.
     const success = (position) => {
       const crd = position.coords;
-      console.log('Your current position is:');
-      console.log(`Latitude : ${crd.latitude}`);
-      console.log(`Longitude: ${crd.longitude}`);
-      console.log(`More or less ${crd.accuracy} meters.`);
+      this.setState({currentCoords:{latCoord: crd.latitude} })
+      this.setState({currentCoords:{longCoord: crd.latitude} })
+      // Test logs for coords
+      console.log("In state: ", "lat coord is: ", this.state.currentCoords.latCoord)
+      console.log("In state: ", "long coord is: ", this.state.currentCoords.longCoord)
     }
 
     // If failed to fetch location, log errors in console.
