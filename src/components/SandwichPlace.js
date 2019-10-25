@@ -8,15 +8,18 @@ class SandwichPlace extends React.Component {
       <div className="container">
         <div className="row img">
           <div className="col-md-6 offset-md-3">
-            <div>
-              <img className="mainFood" src={placeDetailsObj.image}></img>
-              <p>Name: {placeDetailsObj.name}</p>
-              <p>Phone: {placeDetailsObj.phone}</p>
-              <p>Price: {placeDetailsObj.price}</p>
-              <p>Address: {placeDetailsObj.address}</p>
-              <p>City: {placeDetailsObj.city}</p>
-              <p>Zip: {placeDetailsObj.zip}</p>
-              <p>Distance: {placeDetailsObj.distance} miles</p>
+            <div className="card">
+              <img src={placeDetailsObj.image} className="card-img-top"/>
+            </div>
+            <div className="card-body">
+              <h5 className="card-title" >{placeDetailsObj.name}</h5>
+              <p className="card-text card-price">Price: <span>{placeDetailsObj.price}</span></p>
+              <p className="card-text">Phone: {placeDetailsObj.phone}</p>
+              <p className="card-text">Address: {placeDetailsObj.address}</p>
+              <p className="card-text">City: {placeDetailsObj.city}</p>
+              <p className="card-text">Zip: {placeDetailsObj.zip}</p>
+              <p className="card-text">Distance: {placeDetailsObj.distance} miles</p>
+              <p className="card-text"><small className="text-muted">Mouth not watering? Click again for another location!</small></p>
             </div>
           </div>
         </div>

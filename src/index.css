@@ -33,5 +33,13 @@
   cursor: pointer;
   text-align: center;
   opacity: 0;
+}
+
+.card-price span {
+  color: green
+}
+
+.card-img-top {
+  border-radius: 30px;
 
 }

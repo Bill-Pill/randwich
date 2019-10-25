@@ -8,15 +8,18 @@ class Hotdog extends React.Component {
       <div className="container">
         <div className="row img">
           <div className="col-md-6 offset-md-3">
-            <div>
-              <img className="mainFood" src={dogplaceDetailsObj.image}></img>
-              <p>Name: {dogplaceDetailsObj.name}</p>
-              <p>Phone: {dogplaceDetailsObj.phone}</p>
-              <p>Price: {dogplaceDetailsObj.price}</p>
-              <p>Address: {dogplaceDetailsObj.address}</p>
-              <p>City: {dogplaceDetailsObj.city}</p>
-              <p>Zip: {dogplaceDetailsObj.zip}</p>
-              <p>Distance: {dogplaceDetailsObj.distance} miles</p>
+            <div className="card">
+              <img src={dogplaceDetailsObj.image} className="card-img-top"/>
+            </div>
+            <div className="card-body">
+              <h5 className="card-title" >{dogplaceDetailsObj.name}</h5>
+              <p className="card-text card-price">Price: <span>{dogplaceDetailsObj.price}</span></p>
+              <p className="card-text">Phone: {dogplaceDetailsObj.phone}</p>
+              <p className="card-text">Address: {dogplaceDetailsObj.address}</p>
+              <p className="card-text">City: {dogplaceDetailsObj.city}</p>
+              <p className="card-text">Zip: {dogplaceDetailsObj.zip}</p>
+              <p className="card-text">Distance: {dogplaceDetailsObj.distance} miles</p>
+              <p className="card-text"><small className="text-muted">Mouth not watering? Click again for another location!</small></p>
             </div>
           </div>
         </div>

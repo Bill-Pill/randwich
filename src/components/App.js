@@ -171,7 +171,7 @@ class App extends React.Component {
         let i = Math.floor(Math.random() * response.data.businesses.length) + 1;
 
         //convert distance value from response from meters to miles
-        //const milesDistanceDog = (response.data.businesses[i].distance * 0.000621371192).toFixed(2)
+        const milesDistanceDog = (response.data.businesses[i].distance * 0.000621371192).toFixed(2)
 
         // object populated with API response items
         const activeDogPlaceDetails = {
@@ -182,7 +182,7 @@ class App extends React.Component {
           address: response.data.businesses[i].location.address1,
           city: response.data.businesses[i].location.city,
           zip: response.data.businesses[i].location.zip_code,
-          //distance: milesDistanceDog
+          distance: milesDistanceDog
         }
         // Setting state with object containing API response items
          this.setState({activeDogPlace: activeDogPlaceDetails })
@@ -222,29 +222,6 @@ class App extends React.Component {
                 clickHandler={this.handleDogClick} />)}
           />
       </Switch>
-// =======
-//       <div className="container">
-//         <div className="row img">
-//           <div className="col-md-6 offset-md-3">
-//             <Hotdog place={this.state.activeDogPlace} />
-//             <SandwichPlace place={this.state.activeSandwichPlace} />
-//           </div>
-//         </div>
-//         <div className="row randbtn">
-//           <div className="col-md-6 offset-md-3">
-//             <br></br>
-//            <button className="randwich_btn btn btn-warning" size="lg" onClick={this.handleSandwichClick}>
-//             Randwich!
-//            </button>
-//            <br></br>
-//            <br></br>
-//            <button className="hotdog_btn btn btn-warning" size="lg" onClick={this.handleDogClick}>
-//             RandDog
-//            </button>
-//           </div>
-//         </div>
-//       </div>
-// >>>>>>> master
     );
   }
 }
