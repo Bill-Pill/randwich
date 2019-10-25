@@ -21,4 +21,3 @@
 
 
 
-https://api.yelp.com/v3/businesses/search?accessToken=API_KEY&term=food
