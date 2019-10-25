@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import './SandwichPlace'
+import { Switch, Route } from 'react-router-dom'
 import SandwichPlace from './SandwichPlace';
+import Home from './Home';
 
 const APIKEY = 'Bearer PnG_RCfAxrBcfA44dnIwv1BALh7sMSIRC5TVEJ9JaWZBsCcUG' + 
                'Og5DkXgLUmqmnJYK2cy0u71s9LWp1lgRJ1Y3VhMsuN5HBph6RoA2VmAjqjIIoNODSUmWLGlGmWnXXYx'
@@ -71,11 +72,9 @@ class App extends React.Component {
     headers: {'Authorization': APIKEY}
     });
 
+    // current coord values plugged into URL
     var latTest = this.state.currentLat.latCoord;
     var longTest = this.state.currentLong.longCoord;
-
-
-
 
     // Get request pre-populated with above defaults.
     // Save specified values to state if successful
@@ -84,7 +83,7 @@ class App extends React.Component {
         // function to retrieve a random sandwich shop from our limit of 50 
         let i = Math.floor(Math.random() * 50) + 1;
 
-        //convert distance value from response from meters to miles
+        //convert distance value from response from meters to miles(2 decimal places)
         const milesDistance = (response.data.businesses[i].distance * 0.000621371192).toFixed(2)
 
         // object populated with API response items
@@ -109,27 +108,25 @@ class App extends React.Component {
     }) 
   }
 
+  // Fetches current location and runs 
   handleClick = () => {
     this.fetchCurrentCoords()
   }
 
   render() {
     return (
-      <div className="container">
-        <div className="row img">
-          <div className="col-md-6 offset-md-3">
-            <SandwichPlace place={this.state.activeSandwichPlace} />
-          </div>
-        </div>
-        <div className="row randbtn">
-          <div className="col-md-6 offset-md-3">
-            <br></br>
-           <button className="randwich_btn btn btn-warning" size="lg" onClick={this.handleClick}>
-            Randwich!
-           </button>
-          </div>
-        </div>
-      </div>
+      <Switch>
+        <Route exact path="/" 
+            render={() => (<Home
+                clickHandler={this.handleClick} />)}
+          />
+          
+        <Route path="/randwich"
+          render={() => (<SandwichPlace
+                place={this.state.activeSandwichPlace}
+                clickHandler={this.handleClick} />)}
+          />
+      </Switch>
     );
   }
 }
