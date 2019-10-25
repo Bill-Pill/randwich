@@ -9,7 +9,7 @@ class SandwichPlace extends React.Component {
         <div className="row img">
           <div className="col-md-6 offset-md-3">
             <div>
-              <img className="mainSandwich" src={placeDetailsObj.image}></img>
+              <img className="mainFood" src={placeDetailsObj.image}></img>
               <p>Name: {placeDetailsObj.name}</p>
               <p>Phone: {placeDetailsObj.phone}</p>
               <p>Price: {placeDetailsObj.price}</p>

@@ -6,18 +6,27 @@ class Home extends React.Component {
     super()
 
     this.state = {
-      redirectToRandwich: false
+      redirectToRandwich: false,
+      redirectToRanddog: false
     }
   }
   
-  handleClickRedirect = () => {
-    this.props.clickHandler();
+  handleRandwichRedirect = () => {
+    this.props.sandwichHandler();
     this.setState({redirectToRandwich: true})
+  }
+
+  handleRanddogRedirect = () => {
+    this.props.dogHandler();
+    this.setState({redirectToRanddog: true})
   }
 
   render() {
     if (this.state.redirectToRandwich) {
       return ( <Redirect to="/randwich" />)
+    } 
+    else if (this.state.redirectToRanddog) {
+      return ( <Redirect to="/randdog" />)
     }
 
     return (
@@ -34,8 +43,13 @@ class Home extends React.Component {
           <div className="row randbtn">
             <div className="col-md-6 offset-md-3">
               <br></br>
-              <button className="randwich_btn btn btn-warning" size="lg" onClick={this.handleClickRedirect}>
+              <button className="randwich_btn btn btn-warning" size="lg" onClick={this.handleRandwichRedirect}>
                 Randwich!
+              </button>
+              <br></br>
+              <br></br>
+              <button className="hotdog_btn btn btn-warning" size="lg" onClick={this.handleRanddogRedirect}>
+                RandDog
               </button>
             </div>
           </div>
