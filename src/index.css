@@ -20,3 +20,7 @@
   justify-content: center;
   align-items: center;
 }
+
+.card-price span {
+  color: green
+}
