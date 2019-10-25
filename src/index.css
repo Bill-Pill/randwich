@@ -2,10 +2,11 @@
   top: 50%;
   left: 50%;
   font-size: 2.0em;
-  
+
 
 }
-.mainSandwich {
+
+.mainFood {
   border-radius: 30px;
   width: 500px;
   display: block;
@@ -32,6 +33,5 @@
   cursor: pointer;
   text-align: center;
   opacity: 0;
-  
+
 }
-  
