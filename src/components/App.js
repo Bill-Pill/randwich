@@ -22,7 +22,10 @@ class App extends React.Component {
         phone: null,
         image: null,
         price: null,
-        address: null
+        address: null,
+        city: null,
+        zip: null,
+        distance: null,
       }
     }
   }
@@ -81,13 +84,19 @@ class App extends React.Component {
         // function to retrieve a random sandwich shop from our limit of 50 
         let i = Math.floor(Math.random() * 50) + 1;
 
+        //convert distance value from response from meters to miles
+        const milesDistance = (response.data.businesses[i].distance * 0.000621371192).toFixed(2)
+
         // object populated with API response items
         const activeSandwichPlaceDetails = {
           name: response.data.businesses[i].name,
           phone: response.data.businesses[i].display_phone,
           image: response.data.businesses[i].image_url,
           price: response.data.businesses[i].price,
-          address: response.data.businesses[i].location.address1
+          address: response.data.businesses[i].location.address1,
+          city: response.data.businesses[i].location.city,
+          zip: response.data.businesses[i].location.zip_code,
+          distance: milesDistance
         }
         // Setting state with object containing API response items
          this.setState({activeSandwichPlace: activeSandwichPlaceDetails })
