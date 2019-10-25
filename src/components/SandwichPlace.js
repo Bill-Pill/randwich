@@ -26,7 +26,7 @@ class SandwichPlace extends React.Component {
           </div>
         </div>
         <div className="row randbtn">
-          <div className="col-md-6 offset-md-3">
+          <div className="col-md-6">
             <br></br>
             <button className="randwich_btn btn btn-warning" size="lg" onClick={this.props.clickHandler}>
               Eh.. another randwich please
