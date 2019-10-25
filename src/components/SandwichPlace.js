@@ -11,6 +11,9 @@ class SandwichPlace extends React.Component {
         <p>Phone: {placeDetailsObj.phone}</p>
         <p>Price: {placeDetailsObj.price}</p>
         <p>Address: {placeDetailsObj.address}</p>
+        <p>City: {placeDetailsObj.city}</p>
+        <p>Zip: {placeDetailsObj.zip}</p>
+        <p>Distance: {placeDetailsObj.distance} miles</p>
       </div>
       
     );
