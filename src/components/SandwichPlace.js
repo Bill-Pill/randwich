@@ -15,7 +15,7 @@ class SandwichPlace extends React.Component {
             <div className="card-body">
               <h5 className="card-title" >{placeDetailsObj.name}</h5>
               <p className="card-text card-price"><strong>Price:</strong> <span>{placeDetailsObj.price}</span></p>
-              <p className="card-text"><strong>Phone:</strong>{placeDetailsObj.phone}</p>
+              <p className="card-text"><strong>Phone:</strong> {placeDetailsObj.phone}</p>
               <p className="card-text"><strong>Address:</strong> {placeDetailsObj.address}</p>
               <p className="card-text"><strong>City:</strong> {placeDetailsObj.city}</p>
               <p className="card-text"><strong>Zip:</strong> {placeDetailsObj.zip}</p>
