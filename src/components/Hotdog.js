@@ -4,6 +4,7 @@ class Hotdog extends React.Component {
 
   render() {
     const dogplaceDetailsObj = this.props.place
+    const directionsURL = `https://www.google.com/maps/dir//${dogplaceDetailsObj.address},+${dogplaceDetailsObj.city},+${dogplaceDetailsObj.zip}`
     return (
       <div className="container">
         <div className="row img">
@@ -19,6 +20,7 @@ class Hotdog extends React.Component {
               <p className="card-text">City: {dogplaceDetailsObj.city}</p>
               <p className="card-text">Zip: {dogplaceDetailsObj.zip}</p>
               <p className="card-text">Distance: {dogplaceDetailsObj.distance} miles</p>
+              <a className="btn btn-primary" href={directionsURL} target="_blank">Take me to that randdog!</a>
               <p className="card-text"><small className="text-muted">Mouth not watering? Click again for another location!</small></p>
             </div>
           </div>
