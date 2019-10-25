@@ -4,6 +4,7 @@ class SandwichPlace extends React.Component {
 
   render() {
     const placeDetailsObj = this.props.place
+    const directionsURL = `https://www.google.com/maps/dir//${placeDetailsObj.address},+${placeDetailsObj.city},+${placeDetailsObj.zip}`
     return (
       <div className="container">
         <div className="row img">
@@ -19,7 +20,8 @@ class SandwichPlace extends React.Component {
               <p className="card-text">City: {placeDetailsObj.city}</p>
               <p className="card-text">Zip: {placeDetailsObj.zip}</p>
               <p className="card-text">Distance: {placeDetailsObj.distance} miles</p>
-              <p className="card-text"><small className="text-muted">Mouth not watering? Click again for another location</small></p>
+              <a className="btn btn-primary" href={directionsURL} target="_blank">Take me to that randwich!</a>
+              <p className="card-text"><small className="text-muted">Mouth not watering? Click again for another location!</small></p>
             </div>
           </div>
         </div>
