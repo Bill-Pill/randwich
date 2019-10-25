@@ -30,11 +30,24 @@ class Home extends React.Component {
     }
 
     return (
+      // <div className="card mainFoodCard" style={{ width: '30rem' }}>
+      //   <img className="card-img-top" src="https://www.landolakes.com/RecipeManagementSystem/media/Recipe-Media-Files/Recipes/Retail/x17/20733-all-american-club-sandwich-600x600.jpg?ext=.jpg" alt="Card image cap" />
+      //   <div className="card-body">
+      //     <a href="#" className="randwich_btn btn btn-warning" size="lg" onClick={this.handleRandwichRedirect}>
+      //       Randwich!</a>
+      //     <br></br>
+      //       <br></br>
+      //       <button className="hotdog_btn btn btn-warning" size="lg" onClick={this.handleRanddogRedirect}>
+      //       RandDog
+      //       </button>
+      //   </div>
+      // </div>
+
       <div className="container">
           <div className="row img">
             <div className="col-md-6 offset-md-3">
               <div>
-                <img className="mainSandwich"
+                <img className="mainFood"
                   src="https://www.landolakes.com/RecipeManagementSystem/media/Recipe-Media-Files/Recipes/Retail/x17/20733-all-american-club-sandwich-600x600.jpg?ext=.jpg">
                 </img>
               </div>

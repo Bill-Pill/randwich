@@ -19,7 +19,7 @@ class SandwichPlace extends React.Component {
               <p className="card-text">City: {placeDetailsObj.city}</p>
               <p className="card-text">Zip: {placeDetailsObj.zip}</p>
               <p className="card-text">Distance: {placeDetailsObj.distance} miles</p>
-              <p className="card-text"><small className="text-muted">Mouth not watering? Click again for another location!</small></p>
+              <p className="card-text"><small className="text-muted">Mouth not watering? Click again for another location</small></p>
             </div>
           </div>
         </div>
