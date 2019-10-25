@@ -14,12 +14,12 @@ class Hotdog extends React.Component {
             </div>
             <div className="card-body">
               <h5 className="card-title" >{dogplaceDetailsObj.name}</h5>
-              <p className="card-text card-price">Price: <span>{dogplaceDetailsObj.price}</span></p>
-              <p className="card-text">Phone: {dogplaceDetailsObj.phone}</p>
-              <p className="card-text">Address: {dogplaceDetailsObj.address}</p>
-              <p className="card-text">City: {dogplaceDetailsObj.city}</p>
-              <p className="card-text">Zip: {dogplaceDetailsObj.zip}</p>
-              <p className="card-text">Distance: {dogplaceDetailsObj.distance} miles</p>
+              <p className="card-text card-price"><strong>Price:</strong><span>{dogplaceDetailsObj.price}</span></p>
+              <p className="card-text"><strong>Phone:</strong> {dogplaceDetailsObj.phone}</p>
+              <p className="card-text"><strong>Address:</strong> {dogplaceDetailsObj.address}</p>
+              <p className="card-text"><strong>City:</strong> {dogplaceDetailsObj.city}</p>
+              <p className="card-text"><strong>Zip:</strong> {dogplaceDetailsObj.zip}</p>
+              <p className="card-text"><strong>Distance:</strong> {dogplaceDetailsObj.distance}<strong>miles</strong></p>
               <a className="btn btn-primary" href={directionsURL} target="_blank">Take me to that randdog!</a>
               <p className="card-text"><small className="text-muted">Mouth not watering? Click again for another location!</small></p>
             </div>

@@ -14,12 +14,12 @@ class SandwichPlace extends React.Component {
             </div>
             <div className="card-body">
               <h5 className="card-title" >{placeDetailsObj.name}</h5>
-              <p className="card-text card-price">Price: <span>{placeDetailsObj.price}</span></p>
-              <p className="card-text">Phone: {placeDetailsObj.phone}</p>
-              <p className="card-text">Address: {placeDetailsObj.address}</p>
-              <p className="card-text">City: {placeDetailsObj.city}</p>
-              <p className="card-text">Zip: {placeDetailsObj.zip}</p>
-              <p className="card-text">Distance: {placeDetailsObj.distance} miles</p>
+              <p className="card-text card-price"><strong>Price:</strong> <span>{placeDetailsObj.price}</span></p>
+              <p className="card-text"><strong>Phone:</strong>{placeDetailsObj.phone}</p>
+              <p className="card-text"><strong>Address:</strong> {placeDetailsObj.address}</p>
+              <p className="card-text"><strong>City:</strong> {placeDetailsObj.city}</p>
+              <p className="card-text"><strong>Zip:</strong> {placeDetailsObj.zip}</p>
+              <p className="card-text"><strong>Distance:</strong> {placeDetailsObj.distance} miles</p>
               <a className="btn btn-primary" href={directionsURL} target="_blank">Take me to that randwich!</a>
               <p className="card-text"><small className="text-muted">Mouth not watering? Click again for another location!</small></p>
             </div>
