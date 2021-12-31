@@ -48,7 +48,7 @@ class Home extends React.Component {
             <div className="col-md-6 offset-md-3">
               <div>
                 <img className="mainFood"
-                  src="https://www.landolakes.com/RecipeManagementSystem/media/Recipe-Media-Files/Recipes/Retail/x17/20733-all-american-club-sandwich-600x600.jpg?ext=.jpg">
+                  src={require('../assets/randwich.jpg')}>
                 </img>
               </div>
             </div>
